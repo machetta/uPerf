@@ -149,8 +149,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
     if (argc < 2) 
     {
-        wprintf(L"\nFormat: uPerf <log file name> [<interval in milisecs, 10 - 1000000, default: 1000>]\n\n");
-		wprintf(L"The counters displayed below can be used in the configuration file.\n");
+        wprintf(L"\nFormat: uPerf <log file name> [<interval in milisecs, 10 - 600000, default: 1000>]\n\n");
+		wprintf(L"The counters displayed below should be copy/pasted into the configuration file.\n");
 		wprintf(L"Configuration file format: \\PhysicalDisk(<Instance>)\\<Counter>\n");
 		wprintf(L"Example: \\PhysicalDisk(0 C: D:)\\Disk Reads/sec\n");
 		ListCounters();
