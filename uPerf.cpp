@@ -49,7 +49,7 @@ BOOL CtrlHandler( DWORD fdwCtrlType )
 		// Handle the CTRL-C signal. 
 		case CTRL_C_EVENT: 
 		printf( "\nCtrl-C event detected, exiting\n" );
-		Beep( 750, 300 );
+//		Beep( 750, 300 );
 		return( TRUE );
 
 		default:
@@ -150,7 +150,7 @@ int _tmain(int argc, _TCHAR* argv[])
     if (argc < 2) 
     {
         wprintf(L"\nFormat: uPerf <log file name> [<interval in milisecs, 10 - 1000000, default: 1000>]\n\n");
-		wprintf(L"Counters displayed below can be used to update the configuration file.\n");
+		wprintf(L"The counters displayed below can be used in the configuration file.\n");
 		wprintf(L"Configuration file format: \\PhysicalDisk(<Instance>)\\<Counter>\n");
 		wprintf(L"Example: \\PhysicalDisk(0 C: D:)\\Disk Reads/sec\n");
 		ListCounters();
@@ -159,9 +159,9 @@ int _tmain(int argc, _TCHAR* argv[])
 
 	if (argc == 3) interval = _ttoi(argv[2]);
 
-	if (interval < 10 || interval > 1000000)
+	if (interval < 10 || interval > 600000)
 	{
-		wprintf(L"Update interval should be between 10 and 3,600,000 ms");
+		wprintf(L"Update interval should be between 10 and 600,000 ms (10 minutes)");
 		return 1;
 	}
 
